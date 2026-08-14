@@ -32,6 +32,21 @@ if($precio2 > 1000){
 //   -> significa “entra al objeto y obtén una propiedad o ejecuta un método”.
 
 
+// array
+$productos = [
+    "Laptop",
+    "Mouse",
+    "Teclado",
+    "Monitor"
+];
+
+echo $productos[3];
+
+
+
+
+
+
 ?>
 
 
