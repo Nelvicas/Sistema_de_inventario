@@ -21,11 +21,11 @@ if($precio > 1000){
 
 $precio2 = 750;
 if($precio2 > 1000){
-    echo "Producto Premium";
+    echo "Producto Premium<br>";
 }elseif($precio2 > 500 && $precio2 < 1000){
-    echo "Producto estandar";
+    echo "Producto estandar<br>";
 }else{
-    echo "Producto Economico";
+    echo "Producto Economico<br>";
 }
 
 
@@ -43,7 +43,26 @@ $productos = [
 echo $productos[3];
 
 
+///////////////////////
 
+require 'funciones.php';
+
+
+$producto = [
+    "nombre" => "Laptop",
+    "stock" => 1
+];
+
+if(tieneStock($producto)){
+    echo "Producto Disponible";
+}else{
+    echo "Producto Agotado";
+}
+
+
+$resultado = calcularDescuento(100, 25);
+
+echo $resultado;
 
 
 
