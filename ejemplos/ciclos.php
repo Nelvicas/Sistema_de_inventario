@@ -24,7 +24,7 @@ echo " ejercicio 3". "<br>". "<br>";
 
 $precios = [100, 750, 1500, 300, 2000];
 
-for ($k; $k < count($precios); $k++){
+for ($k =0; $k < count($precios); $k++){
     if($precios[$k] > 1000){
         echo $precios[$k]."<br>";
     }
@@ -47,7 +47,7 @@ foreach ($precios as $precio) {
 $precios2 = [100, 750, 1500];
 
 for ($a = 0; $a < count($precios2); $a++){
-    echo $precios2[$a];
+    echo $precios2[$a]. "<br>";
 }
 
 
@@ -61,8 +61,25 @@ foreach ($precios2 as $precio) {
 
 
 ///////////////   Uso de while ////////
-echo  "uso de while";
+
+echo  "uso de while"."<br>";
+
+$b = 1;
+
+while ($b <= 5) {
+    echo $b . "<br>";
+    $b++;
+}
 
 
+// ejercicio while 1 
 
+echo "ciclo while". "<br>";
+
+$c = 10;
+
+while($c >= 0){
+    echo $c . "<br>";
+    $c--;
+}
 ?>
