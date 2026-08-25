@@ -82,4 +82,16 @@ while($c >= 0){
     echo $c . "<br>";
     $c--;
 }
+
+
+/////// ejercicio 4 
+
+require 'array.php';
+
+foreach ($producto6 as $producto){ 
+    if ($producto['stock']> 0){
+        echo $producto['nombre']. "<br>";
+    }
+}
+
 ?>

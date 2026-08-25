@@ -9,7 +9,7 @@ $productos = [
     "Monitor"
 ];
 
-echo $productos[3]."<br>";
+//echo $productos[3]."<br>";
 
 
 
@@ -24,7 +24,7 @@ $producto2 = [
     
 ];
 
-echo $producto2['precio']."<br>";
+//echo $producto2['precio']."<br>";
 
 
 $producto3 = [ 
@@ -46,7 +46,7 @@ $producto3 = [
 ];
 
 
-echo $producto3[2]['precio']."<br>";
+//echo $producto3[2]['precio']."<br>";
 
 
 
