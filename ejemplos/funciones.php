@@ -36,3 +36,27 @@ if(tieneStock($producto)){
 }
 
 */
+
+require 'array.php';
+
+function productoDisponible($producto6){
+    foreach($producto6 as $producto){
+        if($producto['stock'] > 0 ){
+            echo $producto['nombre'] ." Esta disponible";
+        }else{
+            echo $producto['nombre'] ." Esta Agotado";
+        }
+    }
+}
+
+
+function calcularTotal($producto6){
+
+    $total = 0;
+    foreach($producto6 as $producto){
+        $total += $producto['precio'] * $producto['stock'];
+    }
+
+    return $total;
+}
+

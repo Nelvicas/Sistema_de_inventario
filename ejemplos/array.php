@@ -130,7 +130,7 @@ $producto6 = [
     [
         "nombre" => "Pila",
         "precio" => 800,
-        "stock" => 7
+        "stock" => 0
     ]
 ];
 

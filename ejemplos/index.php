@@ -46,6 +46,7 @@ echo $productos[3];
 ///////////////////////
 
 require 'funciones.php';
+require 'array.php';
 
 
 $producto = [
@@ -62,9 +63,20 @@ if(tieneStock($producto)){
 
 $resultado = calcularDescuento(100, 25);
 
-echo $resultado;
+echo $resultado."<br>";
+
+echo "/////////////////". "<br>";
+echo " PRODUCTO DISPONIBLE". "<br>";
+
+productoDisponible($producto6);
 
 
+echo "/////////////////". "<br>";
+echo " PRODUCTO TOTAL ". "<br>";
+
+$totalInventario = calcularTotal($producto6);
+
+echo "Total del inventario: $" . $totalInventario;
 
 ?>
 
