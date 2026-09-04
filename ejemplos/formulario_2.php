@@ -1,27 +1,29 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // esta linea significa que se estan enviando datos por el metodo post
 
-    if(empty($_POST['nombre'])){
+    if (empty($_POST['nombre'])) { 
+            echo "El nombre es obligatorio"; 
+        } elseif (empty($_POST['precio'])) { 
+            echo "El precio es obligatorio"; 
+        } elseif ($_POST['precio'] <= 0) { 
+            echo "El precio debe ser mayor que 0"; 
+        } elseif (empty($_POST['stock'])) { 
+            echo "El stock es obligatorio"; 
+        } elseif ($_POST['stock'] < 0) { 
+            echo "El stock no puede ser negativo"; 
+        } else {
 
-        echo "El nombre es obligatorio";
-
-    }elseif(empty($_POST['precio'])){
-
-        echo "El precio es obligatorio";
-    }elseif(empty($_POST['stock'])){
-
-        echo "El stock es obligatorio";
-    }else{
-
-        echo "Nombre valido";
+        
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
         $stock = $_POST['stock'];
 
         echo "Producto recibido: " . $nombre. "<br>";
         echo "Precio: ". $precio. "<br>";
-        echo "Stock: ". $stock;
+        echo "Stock: ". $stock . "<br>";
+
+        echo "Nombre valido";
     }
 
 
@@ -49,9 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label>Nombre:</label>
         <input type="text" name="nombre"><br>
         <label >Precio: </label>
-        <input type="text" name="precio"><br>
+        <input type="number" name="precio"><br>
         <label >Stock: </label>
-        <input type="text" name="stock">
+        <input type="number" name="stock">
 
 
         <br><br>
