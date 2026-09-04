@@ -2,11 +2,34 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $nombre = $_POST['nombre'];
-    $precio = $_POST['precio'];
-    $stock = $_POST['stock'];
+    if(empty($_POST['nombre'])){
 
-    echo "Producto recibido: " . $nombre;
+        echo "El nombre es obligatorio";
+
+    }elseif(empty($_POST['precio'])){
+
+        echo "El precio es obligatorio";
+    }elseif(empty($_POST['stock'])){
+
+        echo "El stock es obligatorio";
+    }else{
+
+        echo "Nombre valido";
+        $nombre = $_POST['nombre'];
+        $precio = $_POST['precio'];
+        $stock = $_POST['stock'];
+
+        echo "Producto recibido: " . $nombre. "<br>";
+        echo "Precio: ". $precio. "<br>";
+        echo "Stock: ". $stock;
+    }
+
+
+    /*
+        isset()  significa existe este dato?
+        empty() significa este dato esta vacio?
+
+    */
 }
 
 ?>
