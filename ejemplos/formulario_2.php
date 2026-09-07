@@ -4,11 +4,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // esta linea significa que se est
 
     if (empty($_POST['nombre'])) { 
             echo "El nombre es obligatorio"; 
-        } elseif (empty($_POST['precio'])) { 
+        } elseif (($_POST['precio'])) { 
             echo "El precio es obligatorio"; 
-        } elseif ($_POST['precio'] <= 0) { 
+        }  elseif (!is_numeric($_POST['precio'])) {
+            echo "El precio debe ser un número";
+        }elseif ($_POST['precio'] <= 0) { 
             echo "El precio debe ser mayor que 0"; 
-        } elseif (empty($_POST['stock'])) { 
+        } elseif ($_POST['stock'] === '') { 
             echo "El stock es obligatorio"; 
         } elseif ($_POST['stock'] < 0) { 
             echo "El stock no puede ser negativo"; 
