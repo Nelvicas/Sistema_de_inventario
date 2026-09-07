@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // esta linea significa que se est
             echo "El nombre es obligatorio"; 
         } elseif (($_POST['precio'])) { 
             echo "El precio es obligatorio"; 
-        }  elseif (!is_numeric($_POST['precio'])) {
+        } elseif (!is_numeric($_POST['precio'])) {
             echo "El precio debe ser un número";
         }elseif ($_POST['precio'] <= 0) { 
             echo "El precio debe ser mayor que 0"; 
