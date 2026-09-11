@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // esta linea significa que se est
 
     if (empty($_POST['nombre'])) { 
             echo "El nombre es obligatorio"; 
-        } elseif (($_POST['precio'])) { 
+        } elseif (empty($_POST['precio'])) { 
             echo "El precio es obligatorio"; 
         } elseif (!is_numeric($_POST['precio'])) {
             echo "El precio debe ser un número";
@@ -30,9 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // esta linea significa que se est
 
 
     /*
-        isset()  significa existe este dato?
-        empty() significa este dato esta vacio?
+        isset()         significa existe este dato?
+        empty()         significa este dato esta vacio?
 
+        !is_numeric     este valor representa un numero 
     */
 }
 
