@@ -12,14 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // esta linea significa que se est
             echo "El precio debe ser mayor que 0"; 
         } elseif ($_POST['stock'] === '') { 
             echo "El stock es obligatorio"; 
+        } elseif (!is_numeric($_POST['stock'])) {
+            echo "El stock debe ser un número";
         } elseif ($_POST['stock'] < 0) { 
             echo "El stock no puede ser negativo"; 
         } else {
 
         
-        $nombre = $_POST['nombre'];
-        $precio = $_POST['precio'];
-        $stock = $_POST['stock'];
+        $nombre = trim($_POST['nombre']);
+        $precio = trim($_POST['precio']);
+        $stock = trim($_POST['stock']);
 
         echo "Producto recibido: " . $nombre. "<br>";
         echo "Precio: ". $precio. "<br>";
@@ -33,7 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // esta linea significa que se est
         isset()         significa existe este dato?
         empty()         significa este dato esta vacio?
 
-        !is_numeric     este valor representa un numero 
+        !is_numeric     este valor no representa un numero 
+
+        trim()     sanear/normalizar los datos recibidos  pasa de esteo (   "     Laptop     "   )  a esto (   "Laptop"   ) elimina los espacios al principio y al final del texto
     */
 }
 
