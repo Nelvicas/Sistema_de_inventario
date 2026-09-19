@@ -11,4 +11,4 @@ $pdo = new PDO(
     $password
 );
 
-echo "Conexión exitosa";
+//echo "Conexión exitosa";

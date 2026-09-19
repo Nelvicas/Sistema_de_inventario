@@ -1,5 +1,7 @@
 <?php
 
+require 'conexion.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nombre = trim($_POST['nombre'] ?? '');       // obten ($_POST['nombre'])      ?? ''=> Si no existe o es null, utiliza ''
@@ -36,9 +38,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     } else {
 
+       /*
         echo "Producto recibido: " . $nombre . "<br>";
         echo "Precio: " . $precio . "<br>";
         echo "Stock: " . $stock . "<br>";
+        */
+
+        $sql = "INSERT INTO productos (nombre, precio, stock)
+        VALUES (:nombre, :precio, :stock)";
+
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->execute([
+            'nombre' => $nombre,
+            'precio' => $precio,
+            'stock' => $stock
+        ]);
+
+            echo "Producto guardado correctamente";
+
     }
 }
 
