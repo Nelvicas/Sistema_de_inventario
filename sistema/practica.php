@@ -24,23 +24,33 @@ $productos = [
 ];
 
 
+$totalInventario = 0;
+$productosAgotados = 0;
+
 
 foreach ($productos as $producto){
     if ($producto['stock'] > 0){
         $estado = "Disponible";
     }elseif($producto['stock'] === 0){
         $estado = "Agotado";
+        $productosAgotados ++;
     }
     
-     $valorInventario = $producto['precio'] * $producto['stock'];
+    $valorInventario = $producto['precio'] * $producto['stock'];
+
+    $totalInventario += $valorInventario;   // acumulador (+=)
+    
 
     echo "Producto: " .$producto['nombre'] ."<br>";
     echo "Precio: " .$producto['precio'] ."<br>";
     echo "Stock: " .$producto['stock'] ."<br>";
     echo "Estado: " . $estado ."<br>";
-    echo "Valor en el inventario: $ ".$valorInventario . "<br>"; 
+    echo "Valor en el inventario: $ ".$valorInventario . "<br>";
 
 }
+
+echo "Valor total de inventario: $".$totalInventario . "<br>";
+echo "Productos Agotados: " .$productosAgotados . "<br>";
 
 ?>
 
