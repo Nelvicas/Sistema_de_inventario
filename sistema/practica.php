@@ -26,14 +26,16 @@ $productos = [
 
 $totalInventario = 0;
 $productosAgotados = 0;
+$productosDisponibles = 0;
 
 
 foreach ($productos as $producto){
     if ($producto['stock'] > 0){
         $estado = "Disponible";
+        $productosDisponibles ++;
     }elseif($producto['stock'] === 0){
         $estado = "Agotado";
-        $productosAgotados ++;
+        $productosAgotados ++;       // incrementa (++)
     }
     
     $valorInventario = $producto['precio'] * $producto['stock'];
@@ -51,6 +53,7 @@ foreach ($productos as $producto){
 
 echo "Valor total de inventario: $".$totalInventario . "<br>";
 echo "Productos Agotados: " .$productosAgotados . "<br>";
+echo "Productos Disponibles: " .$productosDisponibles ."<br>";
 
 ?>
 
