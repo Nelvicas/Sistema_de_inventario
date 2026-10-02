@@ -38,7 +38,7 @@ foreach ($productos as $producto){
         $productosAgotados ++;       // incrementa (++)
     }
     
-    $valorInventario = $producto['precio'] * $producto['stock'];
+    $valorInventario = calcularValorInventario($producto['precio'],$producto['stock']);
 
     $totalInventario += $valorInventario;   // acumulador (+=)
     
@@ -48,6 +48,14 @@ foreach ($productos as $producto){
     echo "Stock: " .$producto['stock'] ."<br>";
     echo "Estado: " . $estado ."<br>";
     echo "Valor en el inventario: $ ".$valorInventario . "<br>";
+
+}
+
+
+function calcularValorInventario($precio, $stock) {
+ 
+    $resultado = $precio * $stock;
+    return $resultado;
 
 }
 
