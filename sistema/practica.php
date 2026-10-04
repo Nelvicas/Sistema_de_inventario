@@ -30,15 +30,18 @@ $productosDisponibles = 0;
 
 
 foreach ($productos as $producto){
+
+    $estado = obtenerEstado($producto['stock']);
+
     if ($producto['stock'] > 0){
-        $estado = "Disponible";
+       // $estado = "Disponible";
         $productosDisponibles ++;
     }elseif($producto['stock'] === 0){
-        $estado = "Agotado";
+        //$estado = "Agotado";
         $productosAgotados ++;       // incrementa (++)
     }
     
-    $valorInventario = calcularValorInventario($producto['precio'],$producto['stock']);   // mandar a llamar la funcion y se aigno 
+    $valorInventario = calcularValorInventario($producto['precio'],$producto['stock']);   // mandar a llamar la funcion y se asigno 
 
     $totalInventario += $valorInventario;   // acumulador (+=)
     
@@ -56,6 +59,16 @@ function calcularValorInventario($precio, $stock) {     //  funcion creada
  
     $resultado = $precio * $stock;
     return $resultado;
+
+}
+
+function obtenerEstado($stock) {
+    if($stock > 0){
+        return "Disponible";
+    }else{
+        return "Agotado";
+    }
+   
 
 }
 
